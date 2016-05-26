@@ -1,0 +1,10 @@
+== README
+
+#CrowCMS is a cms based on Rails.
+
+You can manage your articles and categries by this beta1.0 version.
+
+Thanks.
+
+Author: EtenGstar.
+Rights Reserved: Neighbor System.

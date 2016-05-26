@@ -1,0 +1,530 @@
+zh-CN:
+  date:
+    abbr_day_names:
+    - 周日
+    - 周一
+    - 周二
+    - 周三
+    - 周四
+    - 周五
+    - 周六
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 星期日
+    - 星期一
+    - 星期二
+    - 星期三
+    - 星期四
+    - 星期五
+    - 星期六
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%Y年%b%d日'
+      short: ! '%b%d日'
+    month_names:
+    -
+    - 一月
+    - 二月
+    - 三月
+    - 四月
+    - 五月
+    - 六月
+    - 七月
+    - 八月
+    - 九月
+    - 十月
+    - 十一月
+    - 十二月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 大约一小时
+        other: 大约 %{count} 小时
+      about_x_months:
+        one: 大约一个月
+        other: 大约 %{count} 个月
+      about_x_years:
+        one: 大约一年
+        other: 大约 %{count} 年
+      almost_x_years:
+        one: 接近一年
+        other: 接近 %{count} 年
+      half_a_minute: 半分钟
+      less_than_x_minutes:
+        one: 不到一分钟
+        other: 不到 %{count} 分钟
+      less_than_x_seconds:
+        one: 不到一秒
+        other: 不到 %{count} 秒
+      over_x_years:
+        one: 一年多
+        other: ! '%{count} 年多'
+      x_days:
+        one: 一天
+        other: ! '%{count} 天'
+      x_minutes:
+        one: 一分钟
+        other: ! '%{count} 分钟'
+      x_months:
+        one: 一个月
+        other: ! '%{count} 个月'
+      x_seconds:
+        one: 一秒
+        other: ! '%{count} 秒'
+    prompts:
+      day: 日
+      hour: 时
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+  errors:
+    format: ! '%{attribute}%{message}'
+    messages:
+      accepted: 必须是可被接受的
+      blank: 不能为空
+      present: 必须是空白
+      confirmation: 与确认值不匹配
+      empty: 不能留空
+      equal_to: 必须等于 %{count}
+      even: 必须为双数
+      exclusion: 是保留关键字
+      greater_than: 必须大于 %{count}
+      greater_than_or_equal_to: 必须大于或等于 %{count}
+      inclusion: 不包含于列表中
+      invalid: 是无效的
+      less_than: 必须小于 %{count}
+      less_than_or_equal_to: 必须小于或等于 %{count}
+      not_a_number: 不是数字
+      not_an_integer: 必须是整数
+      odd: 必须为单数
+      record_invalid: ! '验证失败: %{errors}'
+      restrict_dependent_destroy:
+        one: 由于 %{record} 需要此记录，所以无法移除记录
+        many: 由于 %{record} 需要此记录，所以无法移除记录
+      taken: 不能重复添加
+      too_long:
+        one: 过长（最长为一个字符）
+        other: 过长（最长为 %{count} 个字符）
+      too_short:
+        one: 过短（最短为一个字符）
+        other: 过短（最短为 %{count} 个字符）
+      wrong_length:
+        one: 长度非法（必须为一个字符）
+        other: 长度非法（必须为 %{count} 个字符）
+      other_than: 长度非法（不可为 %{count} 个字符
+    template:
+      body: 如下字段出现错误：
+      header:
+        one: 有 1 个错误发生导致「%{model}」无法被保存。
+        other: 有 %{count} 个错误发生导致「%{model}」无法被保存。
+  helpers:
+    select:
+      prompt: 请选择
+    submit:
+      create: 新增%{model}
+      submit: 储存%{model}
+      update: 更新%{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u %n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: CN¥
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: 十亿
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', 和 '
+      two_words_connector: ! ' 和 '
+      words_connector: ! ', '
+  time:
+    am: 上午
+    formats:
+      default: ! '%Y年%b%d日 %A %H:%M:%S %Z'
+      long: ! '%Y年%b%d日 %H:%M'
+      short: ! '%b%d日 %H:%M'
+    pm: 下午
+  devise:
+    failure:
+      invalid: 账号/密码错误，请重新输入
+    sessions:
+      user:
+        signed_in: 欢迎登陆CrowCMS后台管理系统
+  menu:
+    submenu:
+      home_menu: 首页
+      site_menu: 站点管理
+      page_menu: 文档管理
+      article_menu: 文章管理
+      picture_menu: 图片管理
+      album_menu: 相册管理
+      article_menu: 文章管理
+      message_menu: 留言板
+      trash_menu: 回收站
+    midmenu:
+      menu_menu: 菜单
+      banner_menu: 横幅
+      link_menu: 友情链接
+      page_menu: 静态信息
+      visit_menu: 访问统计
+      category_menu: 文章分栏
+      article_menu: 文章
+      album_tags: 相册标签
+      album: 相册
+      article_option: 文章参数
+      message_menu: 审核回复
+      trash_article: 废弃文章
+      trash_page: 废弃文档
+    table_title: 菜单管理
+    name: 菜单名称
+    url: 菜单路径
+    weight: 显示顺序
+    visible: 是否显示
+    new: 添加主菜单
+    edit: 编辑菜单
+    name_length_info: 菜单名称不得超过12个字符
+    url_valid_info: 请输入合法的URL，以http://开始
+    delete_title: 您确认要删除菜单
+    delete_info: 删除菜单后，菜单下的子菜单也会一并删除，请谨慎操作！
+
+  banner:
+    table_title: 横幅管理
+    banner_edit: 编辑横幅
+    id: 编号
+    name: 名称
+    url: 链接
+    banner: 图片
+    description: 描述
+    show: 显示横幅
+    no_description: 暂无描述
+    no_image: 暂无图片
+    name_length_info: 名称不得超过36个字符
+    url_valid_info: 请输入合法的URL，以http://开始
+    banner_type_info: 请上传.jpeg .jpg .png .gif格式图片
+    delete_title: 您确认要删除横幅
+    delete_info: 横幅删除后将无法恢复，请谨慎操作！
+    search_by_id: 根据编号查询
+    search_by_name: 根据名称查询
+    search_by_url: 根据链接查询
+    search_by_created: 根据创建日期查询
+
+  link:
+    table_title: 友情链接管理
+    edit: 编辑友情链接
+    id: 编号
+    name: 站点名称
+    url: 站点网址
+    logo: 站点图标
+    name_length_info: 站点名称不得超过18个字符
+    url_valid_info: 请输入合法的URL，以http://开始
+    logo_valid_info: 请上传.jpeg .jpg .png .gif格式图片
+    search_by_id: 根据链接编号查询
+    search_by_name: 根据链接名称查询
+    search_by_url: 根据链接网址查询
+    no_image: 暂无图片
+    delete_title: 您确认要删除友情链接？
+    delete_info: 友情链接删除后将无法恢复，请谨慎操作！
+  category:
+    table_title: 分栏管理
+    category_edit: 编辑分栏
+    category_info: 分栏信息
+    title: 分栏名称
+    content: 分栏内容
+    is_article: 允许发布文章
+    is_abstract: 允许发布摘要
+    is_thumb: 允许发布缩略图
+    is_file: 允许上传附件
+    is_carousel: 允许发布图集
+    is_option: 是否设置参数
+    delete_title: 您确认要删除分栏？
+    delete_info: 删除分栏后，分栏下的文章也会一并删除，请谨慎操作！
+    option_should_not_be_null: 开启参数选项请至少选择一项参数类型
+    new: 添加顶级分栏
+  article:
+    table_title: 文章管理
+    basic_info: 基本信息
+    id: 编号
+    title: 标题
+    category: 所属分栏
+    author: 作者
+    hits: 点击率
+    is_recommand: 推荐
+    is_carousel: 图集
+    is_mark: 特殊标记
+    option_info: 参数信息
+    option: 参数
+    extra_info: 附加信息
+    thumb: 缩略图
+    file: 附件
+    abstract: 摘要
+    content_info: 文本信息
+    created_at: 创建日期
+    deleted_at: 删除日期
+    delete_title: 您确认要删除文章？
+    muti_delete_title: 您确认要删除全部选中文章？
+    delete_info: 文章删除后将进入回收站！
+    force_delete_info: 文章删除后将无法恢复，请谨慎操作！
+    search_by_id: 根据文章编号查询 
+    search_by_category: 根据文章分栏查询 
+    search_by_title:  根据文章标题查询
+    search_by_author: 根据文章作者查询 
+    search_by_hits:  根据文章点击率查询
+    search_by_created:  根据文章创建日期查询
+    select_option_default: 请选择文章分类
+    select_option_all: 全部分类
+    file_type_info: 请上传.doc .docx .ppt .ppxt .excel .xlsx .pdf格式文件
+    thumb_type_info: 请上传.jpeg .jpg .png .gif格式图片
+
+  article_picture:
+    table_title: 图集管理
+    id: 编号
+    picture_name: 图片名称
+    picture_type: 图片类型
+    picture_size: 图片大小（kb）
+    picture_updated_at: 上传日期 
+    upload_title: 图集上传
+    delete_title: 您确认要删除图片？
+    delete_info: 图片删除后将无法恢复，请谨慎操作！
+  album_tag: 
+    table_title: 标签管理
+    create: 新建标签
+    edit: 编辑标签
+    name: 标签名称
+    delete_title: 您确认要删除标签？
+    delete_info: 标签删除后将无法恢复，请谨慎操作！
+    text_length_info: 标签名称不得超过12个字符
+  album:
+    table_title: 相册管理
+    create: 新建相册
+    edit: 编辑相册
+    name: 相册名称
+    tags: 相册标签  
+    cover: 相册封面
+    description: 相册描述
+    delete_title: 您确认要删除相册？
+    delete_info: 相册删除，其下的相片也会一并删除，请谨慎操作！
+    name_length_info: 相册名称不能为空，长度不能超过24个字符
+    cover_valid_info: 相册封面不能为空，支持图片格式为jpg,jpeg,png,gif
+  photo:
+    board_title: 相册>
+    board_description: 描述：
+    new: 上传相片
+    edit: 编辑相片
+    title: 相片名称
+    name: 相片名称
+    description: 相片描述
+    delete_title: 您确认要删除图片？                #这部分在superbox.js中
+    delete_info: 图片删除后将无法恢复，请谨慎操作！    #这部分在superbox.js中
+    name_length_info: 图片名称不能超过16个字符
+  page:
+    table_title: 文档管理
+    edit_title: 编辑文档
+    id: 编号
+    title: 标题
+    abstract: 摘要
+    content: 内容
+    deleted_at: 删除日期
+    delete_title: 您确认要删除文档？               
+    delete_info: 文档删除后将进入回收站！
+    force_delete_info: 文档删除后将无法恢复，请谨慎操作！
+    search_by_id: 根据文档编号查询 
+    search_by_title:  根据文档标题查询
+    search_by_content: 根据文档内容查询 
+    search_by_created:  根据文档创建日期查询
+    search_by_deleted: 根据文档删除日期
+  article_option:
+    text: 参数名称
+    table_title: 参数管理
+    create: 新建参数
+    edit: 编辑参数
+    delete_title: 您确认要删除参数？
+    delete_info: 参数删除后将无法恢复，请谨慎操作！
+  message:
+    id: 编号
+    author: 发布者
+    email: 邮箱
+    is_permit: 审核状态
+    permit_no: 未通过
+    permit_yes: 已通过
+    permit_all: 全部
+    review_no: 取消显示
+    review_yes: 允许显示
+    content: 留言内容
+    reply: 回复内容
+    no_reply: 尚未恢复留言
+    created_at: 发布日期
+    table_title: 留言管理
+    show_dialog: 显示留言
+    reply_dialog: 回复留言
+    delete_title: 您确认要删除该留言？               
+    delete_info: 留言删除后将无法恢复，请谨慎操作！
+    search_by_id: 根据留言编号查询
+    search_by_author: 根据留言作者查询
+    search_by_email: 根据留言邮箱查询
+    search_by_review: 根据留言审核状态查询
+    search_by_created: 根据留言发布日期查询
+  auth:
+    admin: 后台管理
+    login: 登录
+    logout_title: 退出
+    logout_content: 在关闭浏览器前退出登录，能让您的账户更加安全
+  operate:
+    title: 操作
+    new: 添加
+    show: 显示
+    edit: 修改
+    delete: 删除
+    update: 更新
+    upload: 上传
+    submit: 提交
+    back: 返回
+    load: 加载
+    apply: 应用
+    manage: 管理
+    preview: 预览
+    restore: 恢复
+    review: 审核
+    reply: 回复
+    close: 关闭
+    delete_selected: 删除选中
+    restore_selected: 恢复选中
+  trash:
+    article_title: 垃圾文章
+    page_title: 垃圾文档
+  visit:
+    notice: 注意
+    info: 本站点采用统计方式为每IP四小时内访问站点任意页面作为一次有效记录，其它访问情况将不会被收录。
+    table: 访问信息统计
+    pv: 访问量统计
+    browser: 浏览器统计
+    device: 终端统计
+    ip: 访问IP
+    user: 访问用户
+    landing_page: 受访页面
+    browser: 使用浏览器
+    os: 使用系统
+    device: 使用终端
+    started_at: 访问时间
+
+  activerecord:
+    models:
+      admin/article: 文章
+      admin/page: 文档
+    attributes:
+      admin/article:
+        title: 标题
+        author: 作者
+        content: 文章内容
+        thumb: 缩略图
+        file: 附件
+      admin/page:
+        content: 文档内容
+      admin/article_option:
+        text: 参数名称
+    successful:
+      messages:
+        article_category_created: 分栏添加成功。
+        article_category_updated: 分栏更新成功。
+        article_category_deleted: 分栏删除成功。
+        article_created: 文章添加成功。
+        article_updated: 文章更新成功。
+        article_deleted: 文章删除成功。
+        article_muti_deleted: 所选文章删除成功。
+        article_restored: 文章恢复成功。
+        article_force_deleted: 文章已经彻底删除。
+        album_tag_created: 相册标签添加成功。
+        album_tag_updated: 相册标签更新成功。
+        album_tag_deleted: 相册标签删除成功。
+        album_created: 相册添加成功。
+        album_updated: 相册更新成功。
+        album_deleted: 相册删除成功。
+        photo_created: 相片添加成功。
+        photo_updated: 相片更新成功。
+        photo_deleted: 相片删除成功。
+        page_created: 文档添加成功。
+        page_updated: 文档更新成功。
+        page_deleted: 文档删除成功。
+        page_restored: 文档恢复成功。
+        page_force_deleted: 文档已经彻底删除
+        article_option_created: 文章参数添加成功。
+        article_option_updated: 文章参数更新成功。
+        article_option_deleted: 文章参数删除成功。
+        message_updated: 留言回复添加成功。
+        message_deleted: 留言删除成功。
+        message_reviewed: 留言审核状态更新成功。
+        link_created: 友情链接添加成功。
+        link_updated: 友情链接更新成功。
+        link_deleted: 友情链接删除成功。
+        menu_created: 菜单添加成功。
+        menu_updated: 菜单更新成功。
+        menu_deleted: 菜单删除成功。
+        banner_created: 横幅添加成功。
+        banner_updated: 横幅更新成功。
+        banner_deleted: 横幅删除成功。
+    error:
+      messages:
+        album_tag_created: 相册标签添加失败，请检查标签名是否过长或者存在重复。
+        album_tag_updated: 相册标签修改失败，请检查标签名是否过长或者存在重复。
+        album_created: 相册添加失败，请检查相册名称是否过长，封面图片是否为png,jpeg,jpg.gif格式。
+        album_updated: 相册修改失败，请检查相册名称是否过长，封面图片是否为png,jpeg,jpg.gif格式。
+        photo_updated: 相片修改失败，请检查相片名称是否过长。
+        article_option_created: 文章参数添加失败，请保证参数名称非纯数字并检查名称是否过长或者存在重复。
+        article_option_updated: 文章参数修改失败，请保证参数名称非纯数字并检查名称是否过长或者存在重复。
+        article_muti_deleted: 所选文章删除失败，请确认是否有选中文章。

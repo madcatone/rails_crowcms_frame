@@ -1,0 +1,110 @@
+
+<!-- This is new table list -->
+<%if notice %>
+<div class="alert alert-success fade in">
+  <button class="close" data-dismiss="alert">×</button>
+  <i class="fa-fw fa fa-check"></i>
+  <strong><%= notice %></strong>
+</div>
+<% end %>
+<%if flash[:error] %>
+<div class="alert alert-danger fade in">
+  <button class="close" data-dismiss="alert">×</button>
+  <i class="fa-fw fa fa-times"></i>
+  <strong><%= flash[:error] %></strong>
+</div>
+<% end %>
+<div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+  <header>
+    <span class="widget-icon"> <i class="fa fa-external-link"></i> </span>
+    <h2><p><%= t("link.table_title") %></p></h2>
+  </header>
+  <div>
+    <div class="jarviswidget-editbox"></div>  
+    <div class="widget-body no-padding">
+      <table id="datatable_fixed_column" class="table table-bordered">
+        <thead>
+          <tr>
+            <th><%= t("link.id") %></th>
+            <th><%= t("link.name") %></th>
+            <th><%= t("link.url") %></th>
+            <th><%= t("link.logo") %></th> 
+            <th><%= t("operate.title") %></th>
+          </tr>
+          <tr class="second">
+          <td class="smart-form td-id">
+              <label class="input">
+                <input type="text" value="<%= t("link.search_by_id") %>" class="search_init">
+              </label>  
+            </td>
+            <td class="smart-form">
+              <label class="input">
+                <input type="text" value="<%= t("link.search_by_name") %>" class="search_init">
+              </label>  
+            </td>
+            <td class="smart-form">
+              <label class="input">
+                <input type="text" value="<%= t("link.search_by_url") %>" class="search_init">
+              </label>  
+            </td>
+            <td width="30%" class="smart-form">
+            </td>
+            <td>
+              <%= link_to t("operate.new"), new_admin_link_path, data: { no_turbolink: true, toggle: "modal", target: "#myModal" }, class: "btn bg-color-green txt-color-white" %>
+            </td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @admin_links.each do |admin_link| %>
+          <tr>
+            <td class="valgin-center text-center"><%= admin_link.id %></td>
+            <td class="valgin-center text-center"><%= admin_link.name %></td>
+            <td class="valgin-center text-center"><a href="<%= admin_link.url %>"><%= admin_link.url %></a></td>
+            <td class="valgin-center text-center">
+              <% if admin_link.logo_file_name %>
+                <%= image_tag admin_link.logo(:small) %>
+              <% else %>
+                <%= t("link.no_image") %>
+              <% end %>
+            </td>
+            <td> 
+              <a href="<%= edit_admin_link_path(admin_link) %>" 
+                class="btn bg-color-orange txt-color-white" 
+                data-toggle="modal" 
+                data-target="#myModal_<%= admin_link.id %>">
+                <%= t("operate.edit") %>
+              </a>
+              <a href="<%= admin_link_path(admin_link) %>" 
+                class="btn bg-color-redLight txt-color-white" 
+                data-method="delete"
+                data-title="<%= t("link.delete_title") %>" 
+                data-confirm="<%= t("link.delete_info") %>">
+                <%= t("operate.delete") %>
+              </a>
+            </td>
+            <div class="modal fade" id="myModal_<%= admin_link.id %>" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                </div>
+              </div>
+            </div>
+          </tr>
+          <% end %>
+        </tbody>
+      </table> 
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          </div>
+        </div>
+      </div>     
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

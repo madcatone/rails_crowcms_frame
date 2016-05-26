@@ -1,0 +1,35 @@
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        &times;
+    </button>
+    <h4 class="modal-title" id="myModalLabel"><%= t "banner.show" %></h4>
+</div>
+<div class="modal-body">
+    <p>
+  <strong><%= t "banner.name" %>:</strong>
+  <%= @admin_banner.name %>
+</p>
+
+<p>
+  <strong><%= t "banner.url" %>:</strong>
+  <a href="<%= @admin_banner.url %>"><%= @admin_banner.url %></a>
+</p>
+
+<p>
+  <strong><%= t "banner.description" %>:</strong><br>
+    <%= @admin_banner.description %>
+</p>
+
+<p>
+  <strong><%= t "banner.banner" %>:</strong><br>
+  <% if @admin_banner.banner_file_name %>
+    <%= image_tag @admin_banner.banner %>
+  <% else %>
+    <%= t "banner.no_image" %>
+  <% end %>
+</p>
+</div>
+<div class="modal-footer">
+    <a class="btn btn-default" data-dismiss="modal"><%= t "operate.close" %></a>
+</div>

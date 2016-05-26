@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CrowCMS</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag params[:controller], 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<%= yield :csslib %>
+</head>
+<body>
+<% if current_user.admin?	%>
+	<header id="header">
+		<div id="logo-group">
+			<span id="logo"><a href=""><img src="/images/logo.png" alt="CrowCMS"></a></span>
+		</div>
+		<div class="pull-right">
+			<div id="hide-menu" class="btn-header pull-right">
+				<span> <a href="javascript:void(0);" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+			</div>
+			<div id="logout" class="btn-header transparent pull-right">
+				<span> <a href="<%= destroy_user_session_path %>" title="Sign Out" data-method="delete" data-title="<%= t "auth.logout_title" %>" data-confirm="<%= t "auth.logout_content" %>"><i class="fa fa-sign-out"></i></a> </span>
+			</div>
+		</div>
+
+	</header>
+	<%= render 'layouts/admin/aside' %>
+	<div id="main" role="main">
+		<div id="ribbon">
+			<ol class="breadcrumb">
+			</ol>
+		</div>
+		<div id="content">
+			<%= yield %>
+		</div>
+	</div>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag params[:controller] %>
+	<%= yield :jslib %>
+<% end %>
+</body>
+</html>

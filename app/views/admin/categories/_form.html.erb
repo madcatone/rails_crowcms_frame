@@ -1,0 +1,135 @@
+<div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+  <header>
+    <span class="widget-icon"><i class="fa fa-edit"></i></span>
+    <h2><%= t "category.category_edit" %></h2>
+  </header>
+  <div>
+  <div class="alert alert-danger fade in" id="error_alert" style="display:none">
+  <button class="close" data-dismiss="alert">×</button>
+  <i class="fa-fw fa fa-times"></i>
+  <strong><%= t "category.option_should_not_be_null" %></strong>
+</div>
+    <div class="jarviswidget-editbox"></div>  
+    <div class="widget-body no-padding">
+      <%= form_for(@admin_category, html: { class: "smart-form", id: "validate-form" }) do |f| %>
+      <% if @admin_category.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@admin_category.errors.count, "error") %> prohibited this admin_category from being saved:</h2>
+        <ul>
+          <% @admin_category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+      <fieldset>
+        <%= f.hidden_field :parent_id %>
+        <%= f.hidden_field :option_keys, id: "option-ids" %>
+        <div class="row">
+          <section class="col col-3">
+            <label class="label"> 
+              <%= t "category.title" %><br>
+            </label>
+            <label class="input">
+              <i class="icon-append fa fa-pencil"></i>
+              <%= f.text_field :title, required: "true" %>
+            </label>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col col-3">
+            <label class="label"><%= t "category.content" %></label>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col col-3">
+            <label class="toggle">
+              <%= f.check_box :is_article %>
+              <i data-swchoff-text="关闭" data-swchon-text="开启"></i><%= t "category.is_article" %>
+            </label>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col col-3">
+            <label class="toggle">
+              <%= f.check_box :is_thumb %>
+              <i data-swchoff-text="关闭" data-swchon-text="开启"></i><%= t "category.is_thumb" %>
+            </label>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col col-3">
+            <label class="toggle">
+              <%= f.check_box :is_file %>
+              <i data-swchoff-text="关闭" data-swchon-text="开启"></i><%= t "category.is_file" %>
+            </label>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col col-3">
+            <label class="toggle">
+              <%= f.check_box :is_abstract %>
+              <i data-swchoff-text="关闭" data-swchon-text="开启"></i><%= t "category.is_abstract" %>
+            </label>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col col-3">
+            <label class="toggle">
+              <%= f.check_box :is_carousel %>
+              <i data-swchoff-text="关闭" data-swchon-text="开启"></i><%= t "category.is_carousel" %>
+            </label>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col col-3">
+            <label class="toggle">
+               <%= f.check_box :is_option, id: "is_option" %>
+              <i data-swchoff-text="关闭" data-swchon-text="开启"></i><%= t "category.is_option" %>
+            </label>
+          </section>
+        </div>
+        <% if @admin_category.is_option === true %>
+        <div class="row" id="option_checkboxs">
+          <div class="col col-4">
+            <% @options.each do |category| %>
+            <section class="col col-4 pd-l-no">
+              <label class="checkbox">
+                <input type="checkbox" name="<%= category.text %>" value="<%= category.text %>" class="option-checbox" 
+                <% @admin_category.option_keys.split(",").each do |is_checked| %> 
+                <% if category.text ==  is_checked %>
+                checked
+                <% end %>
+                <% end %>
+                ><i></i><%= category.text %>
+              </label>
+            </section>  
+            <% end %>
+          </div> 
+        </div>
+        <% else %>
+        <div class="row" id="option_checkboxs" style="display:none">
+          <div class="col col-4">
+            <% @options.each_slice(3) do |slice| %>
+            <% slice.each do |category| %>
+            <section class="col col-4 pd-l-no">
+              <label class="checkbox">
+                <input type="checkbox" name="<%= category.text %>" value="<%= category.text %>" class="option-checbox"><i></i><%= category.text %>
+              </label>
+            </section>  
+            <% end %>
+            <% end %>
+          </div> 
+        </div>
+        <% end %>
+        <footer>
+            <%= link_to t("operate.back"), admin_categories_path, class: "btn btn-primary" %>
+            <%= link_to t("operate.submit"), "javascript:submit()", class: "btn btn-primary" %>
+        </footer>
+      </fieldset>
+      <% end %>
+
+    </div>
+  </div>
+</div>

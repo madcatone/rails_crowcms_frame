@@ -1,0 +1,90 @@
+<%if notice %>
+<div class="alert alert-success fade in">
+  <button class="close" data-dismiss="alert">×</button>
+  <i class="fa-fw fa fa-check"></i>
+  <strong><%= notice %></strong>
+</div>
+<% end %>
+<%if flash[:error] %>
+<div class="alert alert-danger fade in">
+  <button class="close" data-dismiss="alert">×</button>
+  <i class="fa-fw fa fa-times"></i>
+  <strong><%= flash[:error] %></strong>
+</div>
+<% end %>
+<div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false">
+  <header>
+    <span class="widget-icon"> <i class="fa fa-tags"></i> </span>
+    <h2><p><%= t("album_tag.table_title") %></p></h2>
+  </header>
+  <div>
+    <div class="jarviswidget-editbox"></div>  
+    <div class="widget-body">
+    
+      <div class="row">
+        <div class="col-md-12">
+          <a href="<%= new_admin_album_tag_path() %>" 
+             class="btn btn-labeled btn-success" 
+             data-toggle="modal" 
+             data-target="#myModal">
+            <span class="btn-label"><i class="glyphicon glyphicon-plus"></i></span>
+            <%= t("operate.new") %>
+          </a>
+        </div>
+      </div><br><!-- crete button -->
+      
+      <div class="row">
+        <% @admin_album_tags.each do |admin_album_tag| %>
+        <div class="col-md-12">
+          <!-- tag name -->
+          <span class="label label-default" style="font-size:16px">
+            <i class="fa fa-tag"></i>&nbsp;<%= admin_album_tag.text %>
+          </span>
+          <!-- end tag name -->
+
+          <a href="<%= admin_album_tag_path(admin_album_tag) %>" 
+             class="btn btn-labeled btn-danger pull-right" 
+             data-method="delete"
+             data-title="<%= t("album_tag.delete_title") %>" 
+             data-confirm="<%= t("album_tag.delete_info") %>" >
+            <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>  <!-- for style -->
+            <%= t("operate.delete") %>
+          </a><!-- delete button -->
+
+          <a href="<%= edit_admin_album_tag_path(admin_album_tag) %>" 
+             class="btn btn-labeled btn-warning btn-warning-mr pull-right" 
+             data-toggle="modal" 
+             data-target="#myModal_<%= admin_album_tag.id %>">
+            <span class="btn-label"><i class="glyphicon glyphicon-edit"></i></span>
+            <%= t("operate.edit") %>
+          </a><!-- edit button -->
+        </div><br><br>
+        <!-- dialog for edit tag -->
+        <div class="modal fade" 
+             id="myModal_<%= admin_album_tag.id %>" 
+             tabindex="-1" role="dialog" 
+             aria-labelledby="myModal" 
+             aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- render form -->
+              </div>
+            </div>
+        </div>
+        <!-- end dialog -->
+        <% end %>
+      </div> 
+    </div>
+  </div>
+</div>
+<!-- dialog for create tag -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+<!-- end dialog -->
+
+
+

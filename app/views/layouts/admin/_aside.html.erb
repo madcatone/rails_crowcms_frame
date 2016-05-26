@@ -1,0 +1,61 @@
+<aside id="left-panel">
+	<nav>
+		<ul>
+			<li>
+				<a href="<%= root_path %>"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">	
+					<%= t("menu.submenu.home_menu") %>
+				</span></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-lg fa-fw fa-sitemap"></i> <span class="menu-item-parent">	
+					<%= t("menu.submenu.site_menu") %>
+				</span></a>
+				<ul>
+					<li><%= link_to t("menu.midmenu.menu_menu"), admin_menus_path %></li>
+					<li><%= link_to t("menu.midmenu.link_menu"), admin_links_path %></li>
+					<li><%= link_to t("menu.midmenu.banner_menu"), admin_banners_path %></li>
+					<li><%= link_to t("menu.midmenu.page_menu"), admin_pages_path %></li>
+					<li><%= link_to t("menu.midmenu.visit_menu"), admin_visit_path %></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-lg fa-fw fa-list-ul"></i> <span class="menu-item-parent">
+					<%= t("menu.submenu.article_menu") %>
+				</span></a>
+				<ul>
+					<li><%= link_to t("menu.midmenu.category_menu"), admin_categories_path %></li>
+					<li><%= link_to t("menu.midmenu.article_option"), admin_article_options_path %></li>
+					<li><%= link_to t("menu.midmenu.article_menu"), admin_articles_path %></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-lg fa-fw fa-picture-o"></i> <span class="menu-item-parent">
+					<%= t("menu.submenu.album_menu") %>
+				</span></a>
+				<ul>
+					<li><%= link_to t("menu.midmenu.album_tags"), admin_album_tags_path %></li>
+					<li><%= link_to t("menu.midmenu.album"), admin_albums_path %></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-lg fa-fw fa-comments"></i> <span class="menu-item-parent">
+					<%= t("menu.submenu.message_menu") %>
+				</span></a>
+				<ul>
+					<li><%= link_to t("menu.midmenu.message_menu"), admin_messages_path %></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-lg fa-fw fa-trash-o"></i> <span class="menu-item-parent">
+					<%= t("menu.submenu.trash_menu") %>
+				</span></a>
+				<ul>
+					<li><%= link_to t("menu.midmenu.trash_article"), admin_trash_articles_path %></li>
+					<li><%= link_to t("menu.midmenu.trash_page"), admin_trash_pages_path %></li>
+
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+</aside>
